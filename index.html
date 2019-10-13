@@ -7,7 +7,7 @@
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570934038870">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570935355760">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -83,6 +83,160 @@
           
   <article class="article">
     <h2 class="article-title">
+      <a href="https://17637462979.github.io/post/faker_data">faker_data</a>
+    </h2>
+    <p class="article-meta">
+      2019-10-13
+      
+        <a href="https://17637462979.github.io/tag/wpGaHaR_2" class="badge ">
+          faker
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge ">
+          随笔
+        </a>
+      
+    </p>
+    <p class="text-lead">
+      <p>###造数据<br>
+#####生成假数据的第三方库---faker</p>
+<ul>
+<li>官方文档:<a href="https://faker.readthedocs.io/en/master/" title="faker">https://faker.readthedocs.io/en/master/</a></li>
+<li>如果有其他需求请参阅官方文档,我只用到了少部分功能
+<ol>
+<li>生成个人信息数据<br>
+<code>from faker import Faker</code><br>
+<code>fake = Faker(locale='zh_CN')</code><br>
+<code>print(fake.simple_profile())</code></li>
+</ol>
+<ul>
+<li>这个时候会发现生成了中文的个人信息,如果想要生成其他语言可以参见文档</li>
+</ul>
+<ol start="2">
+<li>生成文章数据<br>
+<code>&quot;title&quot;: fake.text(max_nb_chars=5)</code><br>
+<code>&quot;author&quot;: fake.name()</code><br>
+<code>&quot;rel_time&quot;: fake.date()</code><br>
+<code>&quot;contect&quot;: fake.text(max_nb_chars=20000)</code>
+<ul>
+<li>文章数据一般包含标题,作者,发布时间,文章内容,(max_nb_chars限定最大长度)<br>
+###存数据<br>
+#####将数据存到mongodb的第三方库---pymongo<br>
+#####mongodb安装:<br>
+略[windows系统一路next(最后一步将安装可视化工具的勾取消),linux可以使用docker]<br>
+#####使用pymongo连接mongodb:<br>
+配置数据库信息<br>
+client = pymongo.MongoClient('localhost', 27017)<br>
+mydb = client['faker_data']<br>
+musictop = mydb['article']<br>
+解释:</li>
+</ul>
+</li>
+<li>localhost: 数据库所在服务器ip</li>
+<li>27017: 默认端口</li>
+<li>faker_data:新建的数据库</li>
+<li>article: 集合,不需要新建,插入时自动创建.如果新建了则需要插入一条数据才能看见<br>
+#####将数据存入mongodb<br>
+def save_url_to_Mongo(data):<br>
+try:<br>
+musictop.insert_one(data)<br>
+print(&quot;存储到MongoDb成功&quot;)<br>
+except Exception as e:<br>
+print('存储到MongoDb失败', e)</li>
+</ol>
+</li>
+</ul>
+<p>#####多线程写入<br>
+不咋几把会,待添加</p>
+
+    </p>
+    <div class="row">
+      <a href="https://17637462979.github.io/post/faker_data" class="readmore-link">
+        <button>
+          Read More
+        </button>
+      </a>
+    </div>
+  </article>
+
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://17637462979.github.io/post/yd_tips">yd_tips</a>
+    </h2>
+    <p class="article-meta">
+      2019-10-13
+      
+        <a href="https://17637462979.github.io/tag/z_NmYEYV6" class="badge secondary">
+          总结
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge ">
+          随笔
+        </a>
+      
+    </p>
+    <p class="text-lead">
+      
+    </p>
+    <div class="row">
+      <a href="https://17637462979.github.io/post/yd_tips" class="readmore-link">
+        <button>
+          Read More
+        </button>
+      </a>
+    </div>
+  </article>
+
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://17637462979.github.io/post/yi-xie-wang-zhi-chi-xu-bu-ding-qi-geng-xin">一些网址[持续不定期更新]</a>
+    </h2>
+    <p class="article-meta">
+      2019-10-13
+      
+        <a href="https://17637462979.github.io/tag/MMUFntjVn" class="badge ">
+          网址
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/mJxrvW3Gty" class="badge ">
+          日常小结
+        </a>
+      
+    </p>
+    <p class="text-lead">
+      
+    </p>
+    <div class="row">
+      <a href="https://17637462979.github.io/post/yi-xie-wang-zhi-chi-xu-bu-ding-qi-geng-xin" class="readmore-link">
+        <button>
+          Read More
+        </button>
+      </a>
+    </div>
+  </article>
+
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://17637462979.github.io/post/xiang-mu-zong-jie">项目总结</a>
+    </h2>
+    <p class="article-meta">
+      2019-10-13
+      
+    </p>
+    <p class="text-lead">
+      
+    </p>
+    <div class="row">
+      <a href="https://17637462979.github.io/post/xiang-mu-zong-jie" class="readmore-link">
+        <button>
+          Read More
+        </button>
+      </a>
+    </div>
+  </article>
+
+  <article class="article">
+    <h2 class="article-title">
       <a href="https://17637462979.github.io/post/hello-word">hello word</a>
     </h2>
     <p class="article-meta">
@@ -112,7 +266,7 @@
     <p class="article-meta">
       2018-12-12
       
-        <a href="https://17637462979.github.io/tag/TaZkVHH11" class="badge ">
+        <a href="https://17637462979.github.io/tag/TaZkVHH11" class="badge warning">
           Gridea
         </a>
       
@@ -143,7 +297,7 @@
       
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://17637462979.github.io/images/avatar.png?v=1570934038870" class="no-responsive avatar">
+    <img src="https://17637462979.github.io/images/avatar.png?v=1570935355760" class="no-responsive avatar">
     <div class="text-muted">犹豫就会白给</div>
     <div class="social-container">
       
@@ -168,6 +322,30 @@
         
           
             <li>
+              <a href="https://17637462979.github.io/post/faker_data">faker_data</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://17637462979.github.io/post/yd_tips">yd_tips</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://17637462979.github.io/post/yi-xie-wang-zhi-chi-xu-bu-ding-qi-geng-xin">一些网址[持续不定期更新]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://17637462979.github.io/post/xiang-mu-zong-jie">项目总结</a>
+            </li>
+          
+        
+          
+            <li>
               <a href="https://17637462979.github.io/post/hello-word">hello word</a>
             </li>
           
@@ -187,7 +365,27 @@
     </div>
     <div class="row">
       
-        <a href="https://17637462979.github.io/tag/AB8MHe6I1" class="badge success">
+        <a href="https://17637462979.github.io/tag/wpGaHaR_2" class="badge warning">
+          faker
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge warning">
+          随笔
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/z_NmYEYV6" class="badge secondary">
+          总结
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/MMUFntjVn" class="badge success">
+          网址
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/mJxrvW3Gty" class="badge warning">
+          日常小结
+        </a>
+      
+        <a href="https://17637462979.github.io/tag/AB8MHe6I1" class="badge secondary">
           测试
         </a>
       
