@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" >
 
-<title>为什么使用命令行工具进行的提交没有在github主页上显示出来 | CoderDogZ</title>
+<title>[合集]---&gt;git_err | CoderDogZ</title>
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571007946881">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571009256037">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://17637462979.github.io">
-        <img src="https://17637462979.github.io/images/avatar.png?v=1571007946881" class="site-logo">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1571009256037" class="site-logo">
         <h1 class="site-title">CoderDogZ</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -98,14 +98,28 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">为什么使用命令行工具进行的提交没有在github主页上显示出来</h2>
-            <div class="post-date">2019-10-13</div>
+            <h2 class="post-title">[合集]---&gt;git_err</h2>
+            <div class="post-date">2019-10-14</div>
             
-              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/wei-shi-me-shi-yong-ming-ling-xing-gong-ju-jin-xing-de-ti-jiao-mei-you-zai-github-zhu-ye-shang-xian-shi-chu-lai.jpg')">
+              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/he-ji-greatergit_err.jpg')">
               </div>
             
             <div class="post-content">
-              <p>如果你也遇到了这种情况,那就说明你没有提交成功!没有提交成功!没有提交成功!没有提交成功!<br>
+              <h1 id="git-push-报错error-failed-to-push-some-refs-to-gitgithubcom">Git push 报错error: failed to push some refs to 'git@github.com'</h1>
+<p>这个问题是因为远程库与本地库不一致造成的，那么我们把远程库同步到本地库就可以了。</p>
+<p>1.重新pull<br>
+<code>git pull --rebase origin master</code><br>
+2.重新push<br>
+<code>git push origin master</code><br>
+over!</p>
+<h1 id="fatalremote-origin-already-exists">'fatal:remote origin already exists'</h1>
+<p>只要两步：</p>
+<p>1.先删除<br>
+<code>$ git remote rm origin</code><br>
+2.重新添加<br>
+git remote add origin git@github.com:username/repostery.git          //关联本地仓库，远程库的名字为origin</p>
+<h1 id="命令行工具进行的提交没有在github主页上显示出来">命令行工具进行的提交没有在github主页上显示出来</h1>
+<p>如果你也遇到了这种情况,那就说明你没有提交成功!没有提交成功!没有提交成功!没有提交成功!<br>
 在这种情况下:<br>
 init --&gt; add . --&gt; commit ----&gt; push.<br>
 记住push就行了</p>
@@ -118,6 +132,10 @@ init --&gt; add . --&gt; commit ----&gt; push.<br>
                     git
                   </a>
                 
+                  <a href="https://17637462979.github.io/tag/l6p4sZP6F" class="tag">
+                    git_error
+                  </a>
+                
                   <a href="https://17637462979.github.io/tag/AwOSuK6em" class="tag">
                     tips
                   </a>
@@ -127,9 +145,9 @@ init --&gt; add . --&gt; commit ----&gt; push.<br>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://17637462979.github.io/post/git-bao-cuo-fatalremote-origin-already-exists">
+                <a href="https://17637462979.github.io/post/geng-xin-pip-bao-cuo-attributeerror-nonetype-object-has-no-attribute-bytes">
                   <h3 class="post-title">
-                    Git 报错:&#39;fatal:remote origin already exists&#39;
+                    更新pip报错AttributeError: &#39;NoneType&#39; object has no attribute &#39;bytes&#39;
                   </h3>
                 </a>
               </div>

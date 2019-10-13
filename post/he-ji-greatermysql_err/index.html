@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ModuleNotFoundError: No module named &#39;win32api&#39;以及另一个奇葩错误 | CoderDogZ</title>
+<title>[合集]---&gt;mysql_err | CoderDogZ</title>
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571007946881">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571009256037">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://17637462979.github.io">
-        <img src="https://17637462979.github.io/images/avatar.png?v=1571007946881" class="site-logo">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1571009256037" class="site-logo">
         <h1 class="site-title">CoderDogZ</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -98,39 +98,31 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">ModuleNotFoundError: No module named &#39;win32api&#39;以及另一个奇葩错误</h2>
-            <div class="post-date">2019-10-13</div>
+            <h2 class="post-title">[合集]---&gt;mysql_err</h2>
+            <div class="post-date">2019-10-14</div>
             
-              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/modulenotfounderror-no-module-named-win32apiyi-ji-ling-yi-ge-qi-pa-cuo-wu.jpg')">
+              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/he-ji-greatermysql_err.jpg')">
               </div>
             
             <div class="post-content">
-              <p>在运行scrapy项目时,报错:<br>
-ModuleNotFoundError: No module named 'win32api'[缺少,那就装]<br>
-<a href="https://pypi.org/project/pypiwin32/#files">https://pypi.org/project/pypiwin32/#files</a><br>
-到这里下载对应的whl文件到scripts文件夹下安装,由于是在虚拟环境下,使用原来的pip 会安装到本身的环境中<br>
-所以激活虚拟环境安装<br>
-此时报错:<br>
-Fatal error in launcher: Unable to create process using '&quot;d:\venv\scripts\python.exe&quot;  &quot;D:\base_crawl\venv\Scripts\pip.exe&quot; install pypiwin32-223-py3-none-any.whl'</p>
-<p>换成pip3:</p>
-<p>Fatal error in launcher: Unable to create process using '&quot;d:\venv\scripts\python.exe&quot;  &quot;D:\base_crawl\venv\Scripts\pip3.exe&quot; install pypiwin32-223-py3-none-any.whl'</p>
-<p>换成easy_install :<br>
-Fatal error in launcher: Unable to create process using '&quot;d:\venv\scripts\python.exe&quot;  &quot;D:\base_crawl\venv\Scripts\easy_install.exe&quot; pypiwin32-223-py3-none-any.whl'</p>
-<p>--------------&gt;此时pip 装什么也装不上<br>
-一通乱搜之后的解决方案:<br>
-python -m pip install pypiwin32-223-py3-none-any.whl</p>
-<p>成功=-=</p>
+              <p>#　插入MySQL报错‘pymysql.err.DataError: (1406, &quot;Data too long for column 'url' at row 1&quot;)’<br>
+在插入MySQL的字符太多，此时将MySQL的模式改为非严格模式。<br>
+MySQL中运行：<br>
+mysql&gt; SET @@global.sql_mode= ‘’;<br>
+<strong>【搬运国外大神解释】</strong></p>
+<p>MySQL will truncate any insert value that exceeds the specified column width.</p>
+<p>to make this without error try Switch your MySQL mode to not use STRICT.</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://17637462979.github.io/tag/-JOLfl7Ap" class="tag">
-                    scrapy
-                  </a>
-                
                   <a href="https://17637462979.github.io/tag/Ry_eMFYdy" class="tag">
                     报错
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/gY16THcFs" class="tag">
+                    MySQL
                   </a>
                 
                   <a href="https://17637462979.github.io/tag/AwOSuK6em" class="tag">
@@ -142,9 +134,9 @@ python -m pip install pypiwin32-223-py3-none-any.whl</p>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://17637462979.github.io/post/win10-an-zhuang-mitmproxycheng-gong-zhi-hou-fang-wen-mitmit-chu-xian-bu-liao-xia-zai-zheng-shu-ye-mian">
+                <a href="https://17637462979.github.io/post/he-ji-greaterredis_err">
                   <h3 class="post-title">
-                    win10安装mitmproxy，成功之后访问mitm.it出现不了下载证书页面
+                    [合集]---&gt;redis_err
                   </h3>
                 </a>
               </div>

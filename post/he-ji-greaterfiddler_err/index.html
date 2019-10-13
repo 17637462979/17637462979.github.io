@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" >
 
-<title>redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error | CoderDogZ</title>
+<title>[合集]---&gt;fiddler_err | CoderDogZ</title>
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571007946881">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571009256037">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://17637462979.github.io">
-        <img src="https://17637462979.github.io/images/avatar.png?v=1571007946881" class="site-logo">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1571009256037" class="site-logo">
         <h1 class="site-title">CoderDogZ</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -98,31 +98,38 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error</h2>
-            <div class="post-date">2019-10-13</div>
+            <h2 class="post-title">[合集]---&gt;fiddler_err</h2>
+            <div class="post-date">2019-10-14</div>
             
-              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/redis-qi-dong-chu-cuo-creating-server-tcp-listening-socket-1270016379-bind-no-error.jpg')">
+              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/he-ji-greaterfiddler_err.jpg')">
               </div>
             
             <div class="post-content">
-              <p>第一次安装redis服务器，出现以上错误按顺序执行</p>
-<ol>
-<li>redis-cli.exe</li>
-<li>shutdown<br>
-但是在shutdown回车之后会出现错误，此时是因为没有为redis设置密码。<br>
-需在客户端里设置密码之后<br>
-127.0.0.1:6379&gt; auth &quot;yourpassword&quot;<br>
-在进行后面的操作，</li>
-<li>exit</li>
-<li>redis-server.exe redis.windows.conf</li>
-</ol>
+              <h1 id="安装成功fiddler之后浏览器无法正常上网">安装成功fiddler之后浏览器无法正常上网</h1>
+<p>安装fiddler的教程千奇百怪，我就不记录了，我也不知道我怎么安装的就成功了【当然不是一次成功的QAQ】<br>
+<img src="https://upload-images.jianshu.io/upload_images/13873460-ab08e36acc4dd134.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jj.png"></p>
+<p>fiddler安装好之后，关闭fiddler无法上网的问题也是千奇百怪【以Firefox为例，其他类似】，我遇到的是手动设置的代理，这也导致了我在使用接口获取芝麻代理IP的时候会很奇怪的写入https,ftp的代理：<br>
+就像这样，{'http': 'http://106.110.39.14:4232', 'https': 'https://127.0.0.1:8888', 'ftp': 'ftp://127.0.0.1:8888'}【我只需要http代理】<br>
+<img src="https://upload-images.jianshu.io/upload_images/13873460-91955b5a82931b41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Firefox.png"><br>
+原来是设置手动，现在改为使用系统就好了，并且之前只能抓Firefox现在Google也可以</p>
+<h1 id="fiddler抓包显示乱码">fiddler抓包显示乱码</h1>
+<p>当然，显示乱码的原因也有很多，我说一种我遇到的情况，我遇到的是因为HTML太大压缩导致了抓到的包乱码，只需要在抓到的URL右键-&gt;Decode Selected Sessions 将HTML加压缩即可【ps:我找这个decode 找到了好久QAQ，最上面的decode点击之后需要重新请求一次】<br>
+<img src="https://upload-images.jianshu.io/upload_images/13873460-548f43a4379a085a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="qq1.png"></p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://17637462979.github.io/tag/BS_h8WGTu" class="tag">
-                    redis
+                  <a href="https://17637462979.github.io/tag/Ry_eMFYdy" class="tag">
+                    报错
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/b5QOOvqy0" class="tag">
+                    乱码
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/hGgaLjwCA" class="tag">
+                    fiddler
                   </a>
                 
                   <a href="https://17637462979.github.io/tag/AwOSuK6em" class="tag">
@@ -134,9 +141,9 @@
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://17637462979.github.io/post/wei-shi-me-shi-yong-ming-ling-xing-gong-ju-jin-xing-de-ti-jiao-mei-you-zai-github-zhu-ye-shang-xian-shi-chu-lai">
+                <a href="https://17637462979.github.io/post/mitmproxy_err">
                   <h3 class="post-title">
-                    为什么使用命令行工具进行的提交没有在github主页上显示出来
+                    [合集]---&gt;mitmproxy_err
                   </h3>
                 </a>
               </div>

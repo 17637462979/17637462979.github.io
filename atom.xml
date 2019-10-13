@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://17637462979.github.io</id>
     <title>CoderDogZ</title>
-    <updated>2019-10-13T23:05:49.956Z</updated>
+    <updated>2019-10-13T23:27:48.409Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://17637462979.github.io"/>
     <link rel="self" href="https://17637462979.github.io/atom.xml"/>
@@ -11,25 +11,46 @@
     <icon>https://17637462979.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, CoderDogZ</rights>
     <entry>
-        <title type="html"><![CDATA[ModuleNotFoundError: No module named 'win32api'以及另一个奇葩错误]]></title>
-        <id>https://17637462979.github.io/post/modulenotfounderror-no-module-named-win32apiyi-ji-ling-yi-ge-qi-pa-cuo-wu</id>
-        <link href="https://17637462979.github.io/post/modulenotfounderror-no-module-named-win32apiyi-ji-ling-yi-ge-qi-pa-cuo-wu">
+        <title type="html"><![CDATA[[合集]--->flask_tips]]></title>
+        <id>https://17637462979.github.io/post/he-ji-greaterflask_tips</id>
+        <link href="https://17637462979.github.io/post/he-ji-greaterflask_tips">
         </link>
-        <updated>2019-10-13T14:29:41.000Z</updated>
+        <updated>2019-10-13T23:25:37.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[win10安装mitmproxy，成功之后访问mitm.it出现不了下载证书页面]]></title>
-        <id>https://17637462979.github.io/post/win10-an-zhuang-mitmproxycheng-gong-zhi-hou-fang-wen-mitmit-chu-xian-bu-liao-xia-zai-zheng-shu-ye-mian</id>
-        <link href="https://17637462979.github.io/post/win10-an-zhuang-mitmproxycheng-gong-zhi-hou-fang-wen-mitmit-chu-xian-bu-liao-xia-zai-zheng-shu-ye-mian">
+        <title type="html"><![CDATA[[合集]--->mysql_err]]></title>
+        <id>https://17637462979.github.io/post/he-ji-greatermysql_err</id>
+        <link href="https://17637462979.github.io/post/he-ji-greatermysql_err">
         </link>
-        <updated>2019-10-13T14:29:13.000Z</updated>
+        <updated>2019-10-13T23:23:04.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[win10安装mitmproxy报错"Failed building wheel for brotlipy"]]></title>
-        <id>https://17637462979.github.io/post/win10-an-zhuang-mitmproxy-bao-cuo-failed-building-wheel-for-brotlipy</id>
-        <link href="https://17637462979.github.io/post/win10-an-zhuang-mitmproxy-bao-cuo-failed-building-wheel-for-brotlipy">
+        <title type="html"><![CDATA[[合集]--->redis_err]]></title>
+        <id>https://17637462979.github.io/post/he-ji-greaterredis_err</id>
+        <link href="https://17637462979.github.io/post/he-ji-greaterredis_err">
         </link>
-        <updated>2019-10-13T14:28:20.000Z</updated>
+        <updated>2019-10-13T23:20:42.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[合集]--->fiddler_err]]></title>
+        <id>https://17637462979.github.io/post/he-ji-greaterfiddler_err</id>
+        <link href="https://17637462979.github.io/post/he-ji-greaterfiddler_err">
+        </link>
+        <updated>2019-10-13T23:18:43.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[合集]--->mitmproxy_err]]></title>
+        <id>https://17637462979.github.io/post/mitmproxy_err</id>
+        <link href="https://17637462979.github.io/post/mitmproxy_err">
+        </link>
+        <updated>2019-10-13T23:13:23.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[合集]--->git_err]]></title>
+        <id>https://17637462979.github.io/post/he-ji-greatergit_err</id>
+        <link href="https://17637462979.github.io/post/he-ji-greatergit_err">
+        </link>
+        <updated>2019-10-13T23:07:43.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[更新pip报错AttributeError: 'NoneType' object has no attribute 'bytes']]></title>
@@ -58,26 +79,5 @@
         <link href="https://17637462979.github.io/post/utf-8-he-unicode-de-qu-bie-zhuan">
         </link>
         <updated>2019-10-13T14:19:24.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[fiddler抓包显示乱码]]></title>
-        <id>https://17637462979.github.io/post/fiddler-zhua-bao-xian-shi-luan-ma</id>
-        <link href="https://17637462979.github.io/post/fiddler-zhua-bao-xian-shi-luan-ma">
-        </link>
-        <updated>2019-10-13T14:18:13.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[安装成功fiddler之后浏览器无法正常上网]]></title>
-        <id>https://17637462979.github.io/post/an-zhuang-cheng-gong-fiddler-zhi-hou-liu-lan-qi-wu-fa-zheng-chang-shang-wang</id>
-        <link href="https://17637462979.github.io/post/an-zhuang-cheng-gong-fiddler-zhi-hou-liu-lan-qi-wu-fa-zheng-chang-shang-wang">
-        </link>
-        <updated>2019-10-13T14:17:10.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[插入MySQL报错‘pymysql.err.DataError: (1406, "Data too long for column 'url' at row 1")’]]></title>
-        <id>https://17637462979.github.io/post/cha-ru-mysql-bao-cuo-pymysqlerrdataerror-1406-data-too-long-for-column-url-at-row-1</id>
-        <link href="https://17637462979.github.io/post/cha-ru-mysql-bao-cuo-pymysqlerrdataerror-1406-data-too-long-for-column-url-at-row-1">
-        </link>
-        <updated>2019-10-13T14:15:49.000Z</updated>
     </entry>
 </feed>
