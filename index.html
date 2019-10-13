@@ -7,7 +7,7 @@
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570935355760">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570935483583">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -88,18 +88,18 @@
     <p class="article-meta">
       2019-10-13
       
-        <a href="https://17637462979.github.io/tag/wpGaHaR_2" class="badge ">
+        <a href="https://17637462979.github.io/tag/wpGaHaR_2" class="badge secondary">
           faker
         </a>
       
-        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge ">
+        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge secondary">
           随笔
         </a>
       
     </p>
     <p class="text-lead">
-      <p>###造数据<br>
-#####生成假数据的第三方库---faker</p>
+      <h3 id="造数据">造数据</h3>
+<h5 id="生成假数据的第三方库-faker">生成假数据的第三方库---faker</h5>
 <ul>
 <li>官方文档:<a href="https://faker.readthedocs.io/en/master/" title="faker">https://faker.readthedocs.io/en/master/</a></li>
 <li>如果有其他需求请参阅官方文档,我只用到了少部分功能
@@ -119,35 +119,39 @@
 <code>&quot;rel_time&quot;: fake.date()</code><br>
 <code>&quot;contect&quot;: fake.text(max_nb_chars=20000)</code>
 <ul>
-<li>文章数据一般包含标题,作者,发布时间,文章内容,(max_nb_chars限定最大长度)<br>
-###存数据<br>
-#####将数据存到mongodb的第三方库---pymongo<br>
-#####mongodb安装:<br>
-略[windows系统一路next(最后一步将安装可视化工具的勾取消),linux可以使用docker]<br>
-#####使用pymongo连接mongodb:<br>
-配置数据库信息<br>
-client = pymongo.MongoClient('localhost', 27017)<br>
-mydb = client['faker_data']<br>
-musictop = mydb['article']<br>
-解释:</li>
+<li>文章数据一般包含标题,作者,发布时间,文章内容,(max_nb_chars限定最大长度)</li>
 </ul>
 </li>
-<li>localhost: 数据库所在服务器ip</li>
-<li>27017: 默认端口</li>
-<li>faker_data:新建的数据库</li>
-<li>article: 集合,不需要新建,插入时自动创建.如果新建了则需要插入一条数据才能看见<br>
-#####将数据存入mongodb<br>
-def save_url_to_Mongo(data):<br>
-try:<br>
-musictop.insert_one(data)<br>
-print(&quot;存储到MongoDb成功&quot;)<br>
-except Exception as e:<br>
-print('存储到MongoDb失败', e)</li>
 </ol>
 </li>
 </ul>
-<p>#####多线程写入<br>
-不咋几把会,待添加</p>
+<h3 id="存数据">存数据</h3>
+<h5 id="将数据存到mongodb的第三方库-pymongo">将数据存到mongodb的第三方库---pymongo</h5>
+<h5 id="mongodb安装">mongodb安装:</h5>
+<pre><code>略[windows系统一路next(最后一步将安装可视化工具的勾取消),linux可以使用docker]
+</code></pre>
+<h5 id="使用pymongo连接mongodb">使用pymongo连接mongodb:</h5>
+<pre><code>配置数据库信息
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['faker_data']
+musictop = mydb['article']
+解释:
+1. localhost: 数据库所在服务器ip
+2. 27017: 默认端口
+3. faker_data:新建的数据库
+4. article: 集合,不需要新建,插入时自动创建.如果新建了则需要插入一条数据才能看见
+</code></pre>
+<h5 id="将数据存入mongodb">将数据存入mongodb</h5>
+<pre><code>def save_url_to_Mongo(data):
+	try:
+    	musictop.insert_one(data)
+    	print(&quot;存储到MongoDb成功&quot;)
+	except Exception as e:
+    	print('存储到MongoDb失败', e)
+</code></pre>
+<h5 id="多线程写入">多线程写入</h5>
+<pre><code>不咋几把会,待添加
+</code></pre>
 
     </p>
     <div class="row">
@@ -166,11 +170,11 @@ print('存储到MongoDb失败', e)</li>
     <p class="article-meta">
       2019-10-13
       
-        <a href="https://17637462979.github.io/tag/z_NmYEYV6" class="badge secondary">
+        <a href="https://17637462979.github.io/tag/z_NmYEYV6" class="badge ">
           总结
         </a>
       
-        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge ">
+        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge secondary">
           随笔
         </a>
       
@@ -194,11 +198,11 @@ print('存储到MongoDb失败', e)</li>
     <p class="article-meta">
       2019-10-13
       
-        <a href="https://17637462979.github.io/tag/MMUFntjVn" class="badge ">
+        <a href="https://17637462979.github.io/tag/MMUFntjVn" class="badge secondary">
           网址
         </a>
       
-        <a href="https://17637462979.github.io/tag/mJxrvW3Gty" class="badge ">
+        <a href="https://17637462979.github.io/tag/mJxrvW3Gty" class="badge warning">
           日常小结
         </a>
       
@@ -242,7 +246,7 @@ print('存储到MongoDb失败', e)</li>
     <p class="article-meta">
       2019-10-13
       
-        <a href="https://17637462979.github.io/tag/AB8MHe6I1" class="badge success">
+        <a href="https://17637462979.github.io/tag/AB8MHe6I1" class="badge secondary">
           测试
         </a>
       
@@ -297,7 +301,7 @@ print('存储到MongoDb失败', e)</li>
       
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://17637462979.github.io/images/avatar.png?v=1570935355760" class="no-responsive avatar">
+    <img src="https://17637462979.github.io/images/avatar.png?v=1570935483583" class="no-responsive avatar">
     <div class="text-muted">犹豫就会白给</div>
     <div class="social-container">
       
@@ -365,19 +369,19 @@ print('存储到MongoDb失败', e)</li>
     </div>
     <div class="row">
       
-        <a href="https://17637462979.github.io/tag/wpGaHaR_2" class="badge warning">
+        <a href="https://17637462979.github.io/tag/wpGaHaR_2" class="badge secondary">
           faker
         </a>
       
-        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge warning">
+        <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="badge secondary">
           随笔
         </a>
       
-        <a href="https://17637462979.github.io/tag/z_NmYEYV6" class="badge secondary">
+        <a href="https://17637462979.github.io/tag/z_NmYEYV6" class="badge ">
           总结
         </a>
       
-        <a href="https://17637462979.github.io/tag/MMUFntjVn" class="badge success">
+        <a href="https://17637462979.github.io/tag/MMUFntjVn" class="badge secondary">
           网址
         </a>
       
@@ -389,7 +393,7 @@ print('存储到MongoDb失败', e)</li>
           测试
         </a>
       
-        <a href="https://17637462979.github.io/tag/TaZkVHH11" class="badge ">
+        <a href="https://17637462979.github.io/tag/TaZkVHH11" class="badge success">
           Gridea
         </a>
       
