@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://17637462979.github.io</id>
     <title>CoderDogZ</title>
-    <updated>2019-10-13T11:55:31.162Z</updated>
+    <updated>2019-10-13T14:30:50.772Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://17637462979.github.io"/>
     <link rel="self" href="https://17637462979.github.io/atom.xml"/>
@@ -11,63 +11,73 @@
     <icon>https://17637462979.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, CoderDogZ</rights>
     <entry>
-        <title type="html"><![CDATA[faker_data]]></title>
-        <id>https://17637462979.github.io/post/faker_data</id>
-        <link href="https://17637462979.github.io/post/faker_data">
+        <title type="html"><![CDATA[ModuleNotFoundError: No module named 'win32api'以及另一个奇葩错误]]></title>
+        <id>https://17637462979.github.io/post/modulenotfounderror-no-module-named-win32apiyi-ji-ling-yi-ge-qi-pa-cuo-wu</id>
+        <link href="https://17637462979.github.io/post/modulenotfounderror-no-module-named-win32apiyi-ji-ling-yi-ge-qi-pa-cuo-wu">
         </link>
-        <updated>2019-10-13T02:51:57.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="造数据">造数据</h3>
-<h5 id="生成假数据的第三方库-faker">生成假数据的第三方库---faker</h5>
-<ul>
-<li>官方文档:<a href="https://faker.readthedocs.io/en/master/" title="faker">https://faker.readthedocs.io/en/master/</a></li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<h3 id="造数据">造数据</h3>
-<h5 id="生成假数据的第三方库-faker">生成假数据的第三方库---faker</h5>
-<ul>
-<li>官方文档:<a href="https://faker.readthedocs.io/en/master/" title="faker">https://faker.readthedocs.io/en/master/</a></li>
-</ul>
-]]></content>
+        <updated>2019-10-13T14:29:41.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[yd_tips]]></title>
-        <id>https://17637462979.github.io/post/yd_tips</id>
-        <link href="https://17637462979.github.io/post/yd_tips">
+        <title type="html"><![CDATA[win10安装mitmproxy，成功之后访问mitm.it出现不了下载证书页面]]></title>
+        <id>https://17637462979.github.io/post/win10-an-zhuang-mitmproxycheng-gong-zhi-hou-fang-wen-mitmit-chu-xian-bu-liao-xia-zai-zheng-shu-ye-mian</id>
+        <link href="https://17637462979.github.io/post/win10-an-zhuang-mitmproxycheng-gong-zhi-hou-fang-wen-mitmit-chu-xian-bu-liao-xia-zai-zheng-shu-ye-mian">
         </link>
-        <updated>2019-10-13T02:51:05.000Z</updated>
+        <updated>2019-10-13T14:29:13.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[一些网址[持续不定期更新]]]></title>
-        <id>https://17637462979.github.io/post/yi-xie-wang-zhi-chi-xu-bu-ding-qi-geng-xin</id>
-        <link href="https://17637462979.github.io/post/yi-xie-wang-zhi-chi-xu-bu-ding-qi-geng-xin">
+        <title type="html"><![CDATA[win10安装mitmproxy报错"Failed building wheel for brotlipy"]]></title>
+        <id>https://17637462979.github.io/post/win10-an-zhuang-mitmproxy-bao-cuo-failed-building-wheel-for-brotlipy</id>
+        <link href="https://17637462979.github.io/post/win10-an-zhuang-mitmproxy-bao-cuo-failed-building-wheel-for-brotlipy">
         </link>
-        <updated>2019-10-13T02:39:59.000Z</updated>
+        <updated>2019-10-13T14:28:20.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[项目总结]]></title>
-        <id>https://17637462979.github.io/post/xiang-mu-zong-jie</id>
-        <link href="https://17637462979.github.io/post/xiang-mu-zong-jie">
+        <title type="html"><![CDATA[更新pip报错AttributeError: 'NoneType' object has no attribute 'bytes']]></title>
+        <id>https://17637462979.github.io/post/geng-xin-pip-bao-cuo-attributeerror-nonetype-object-has-no-attribute-bytes</id>
+        <link href="https://17637462979.github.io/post/geng-xin-pip-bao-cuo-attributeerror-nonetype-object-has-no-attribute-bytes">
         </link>
-        <updated>2019-10-13T02:37:31.000Z</updated>
+        <updated>2019-10-13T14:25:10.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[hello word]]></title>
-        <id>https://17637462979.github.io/post/hello-word</id>
-        <link href="https://17637462979.github.io/post/hello-word">
+        <title type="html"><![CDATA[json格式cookie转成可用的形式]]></title>
+        <id>https://17637462979.github.io/post/json-ge-shi-cookie-zhuan-cheng-ke-yong-de-xing-shi</id>
+        <link href="https://17637462979.github.io/post/json-ge-shi-cookie-zhuan-cheng-ke-yong-de-xing-shi">
         </link>
-        <updated>2019-10-13T00:50:42.000Z</updated>
+        <updated>2019-10-13T14:22:45.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://17637462979.github.io/post/hello-gridea</id>
-        <link href="https://17637462979.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[正则表达式反选]]></title>
+        <id>https://17637462979.github.io/post/zheng-ze-biao-da-shi-fan-xuan</id>
+        <link href="https://17637462979.github.io/post/zheng-ze-biao-da-shi-fan-xuan">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></content>
+        <updated>2019-10-13T14:22:11.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[utf-8和Unicode的区别【转】]]></title>
+        <id>https://17637462979.github.io/post/utf-8-he-unicode-de-qu-bie-zhuan</id>
+        <link href="https://17637462979.github.io/post/utf-8-he-unicode-de-qu-bie-zhuan">
+        </link>
+        <updated>2019-10-13T14:19:24.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[fiddler抓包显示乱码]]></title>
+        <id>https://17637462979.github.io/post/fiddler-zhua-bao-xian-shi-luan-ma</id>
+        <link href="https://17637462979.github.io/post/fiddler-zhua-bao-xian-shi-luan-ma">
+        </link>
+        <updated>2019-10-13T14:18:13.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[安装成功fiddler之后浏览器无法正常上网]]></title>
+        <id>https://17637462979.github.io/post/an-zhuang-cheng-gong-fiddler-zhi-hou-liu-lan-qi-wu-fa-zheng-chang-shang-wang</id>
+        <link href="https://17637462979.github.io/post/an-zhuang-cheng-gong-fiddler-zhi-hou-liu-lan-qi-wu-fa-zheng-chang-shang-wang">
+        </link>
+        <updated>2019-10-13T14:17:10.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[插入MySQL报错‘pymysql.err.DataError: (1406, "Data too long for column 'url' at row 1")’]]></title>
+        <id>https://17637462979.github.io/post/cha-ru-mysql-bao-cuo-pymysqlerrdataerror-1406-data-too-long-for-column-url-at-row-1</id>
+        <link href="https://17637462979.github.io/post/cha-ru-mysql-bao-cuo-pymysqlerrdataerror-1406-data-too-long-for-column-url-at-row-1">
+        </link>
+        <updated>2019-10-13T14:15:49.000Z</updated>
     </entry>
 </feed>

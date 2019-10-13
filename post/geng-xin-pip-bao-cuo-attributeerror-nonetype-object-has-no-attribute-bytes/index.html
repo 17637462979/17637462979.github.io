@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>更新pip报错AttributeError: &#39;NoneType&#39; object has no attribute &#39;bytes&#39; | CoderDogZ</title>
+<meta name="description" content="犹豫就会白给">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570977016136">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://17637462979.github.io">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1570977016136" class="site-logo">
+        <h1 class="site-title">CoderDogZ</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      犹豫就会白给
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://17637462979.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">更新pip报错AttributeError: &#39;NoneType&#39; object has no attribute &#39;bytes&#39;</h2>
+            <div class="post-date">2019-10-13</div>
+            
+            <div class="post-content">
+              <p><strong>错误信息：</strong><br>
+C:\Users\zhang&gt;python -m pip install --upgrade pip<br>
+Collecting pip<br>
+Using cached https://files.pythonhosted.org/packages/5c/e0/be401c003291b56efc55aeba6a80ab790d3d4cece2778288d65323009420/pip-19.1.1-py2.py3-none-any.whl<br>
+Installing collected packages: pip<br>
+Found existing installation: pip 19.0.3<br>
+Uninstalling pip-19.0.3:<br>
+Successfully uninstalled pip-19.0.3<br>
+Rolling back uninstall of pip<br>
+Moving to c:\users\zhang\appdata\roaming\python\python37\scripts\pip.exe<br>
+from C:\Users\zhang\AppData\Local\Temp\pip-uninstall-tjofohy6\pip.exe<br>
+Moving to c:\users\zhang\appdata\roaming\python\python37\scripts\pip3.7.exe<br>
+from C:\Users\zhang\AppData\Local\Temp\pip-uninstall-tjofohy6\pip3.7.exe<br>
+Moving to c:\users\zhang\appdata\roaming\python\python37\scripts\pip3.exe<br>
+from C:\Users\zhang\AppData\Local\Temp\pip-uninstall-tjofohy6\pip3.exe<br>
+Moving to c:\users\zhang\appdata\roaming\python\python37\site-packages\pip-19.0.3.dist-info<br>
+from c:\users\zhang\appdata\roaming\python\python37\site-packages~ip-19.0.3.dist-info<br>
+Moving to c:\users\zhang\appdata\roaming\python\python37\site-packages\pip<br>
+from c:\users\zhang\appdata\roaming\python\python37\site-packages~ip<br>
+Exception:<br>
+Traceback (most recent call last):<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_internal\cli\base_command.py&quot;, line 179, in main<br>
+status = self.run(options, args)<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_internal\commands\install.py&quot;, line 393, in run<br>
+use_user_site=options.use_user_site,<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_internal\req_<em>init</em>_.py&quot;, line 57, in install_given_reqs<br>
+**kwargs<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_internal\req\req_install.py&quot;, line 913, in install<br>
+use_user_site=use_user_site, pycompile=pycompile,<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_internal\req\req_install.py&quot;, line 445, in move_wheel_files<br>
+warn_script_location=warn_script_location,<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_internal\wheel.py&quot;, line 544, in move_wheel_files<br>
+generated.extend(maker.make(spec))<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_vendor\distlib\scripts.py&quot;, line 405, in make<br>
+self._make_script(entry, filenames, options=options)<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_vendor\distlib\scripts.py&quot;, line 309, in _make_script<br>
+self._write_script(scriptnames, shebang, script, filenames, ext)<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_vendor\distlib\scripts.py&quot;, line 245, in _write_script<br>
+launcher = self._get_launcher('t')<br>
+File &quot;C:\Users\zhang\AppData\Roaming\Python\Python37\site-packages\pip_vendor\distlib\scripts.py&quot;, line 384, in _get_launcher<br>
+result = finder(distlib_package).find(name).bytes<br>
+AttributeError: 'NoneType' object has no attribute 'bytes'<br>
+You are using pip version 19.0.3, however version 19.1.1 is available.<br>
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.<br>
+最后的两行让你重新更新，但是重新并没有卵用=-=<br>
+<strong>解决方法：</strong><br>
+方法1：<br>
+for Windows :【已测试】<br>
+python -m pip install -U pip<br>
+for Linux :【未测试】<br>
+pip install -U pip<br>
+方法二：<br>
+【方法一不能成功使用方法二】<br>
+easy_install -U pip<br>
+#####附：<br>
+查看pip 版本：<br>
+pip --version</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://17637462979.github.io/tag/AwOSuK6em" class="tag">
+                    tips
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://17637462979.github.io/post/json-ge-shi-cookie-zhuan-cheng-ke-yong-de-xing-shi">
+                  <h3 class="post-title">
+                    json格式cookie转成可用的形式
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '777c3f00411949215193',
+        clientSecret: '66265e6e9aea1380946c6e10861c63014a29dfc3',
+        repo: '17637462979.github.io',
+        owner: '17637462979',
+        admin: ['17637462979'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

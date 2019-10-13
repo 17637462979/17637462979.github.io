@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>文件下载 | CoderDogZ</title>
+<meta name="description" content="犹豫就会白给">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570977016136">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://17637462979.github.io">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1570977016136" class="site-logo">
+        <h1 class="site-title">CoderDogZ</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      犹豫就会白给
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://17637462979.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">文件下载</h2>
+            <div class="post-date">2019-10-13</div>
+            
+            <div class="post-content">
+              <p>具体需求:从网站下载文件保存文件名,本地路径,[由于去重策略使用下载url的id进行去重]</p>
+<p>scrapy download: 文件的时候无法将本地路径存储到mysql数据库<br>
+wget:在现在文件的时候存储的文件名只是UrlEncode编码之后的一个字符串,很可能重复;<br>
+就像这种:%e8%bf%99%e6%98%af%e4%b8%80%e4%b8%aa%e6%96%87%e4%bb%b6%e5%90%8d.pdf<br>
+urlretrieve: 引入   --&gt;  from urllib.request import urlretrieve,可能由于库比较古老,在下载大文件的时候会出现死掉的情况,虽然参考了网上大佬的代码,使用socket去避免,但还是效果不好;<br>
+代码:<br>
+//downloadfiles是一个文件下载地址和文件名对应的字典</p>
+<pre><code>    if download_files == {}:
+        return
+    file_names = []
+    try:
+        for d in download_files.keys():
+            # print(d)
+            if 'ftp' in d:
+                continue
+            # print(d)
+            temp = requests.get(d, headers=cls.headers)
+            if 'Content-Disposition' in temp.headers.keys():
+                suffix = unquote(
+                    temp.headers['Content-Disposition'].split('=')[-1]).split('.')[-1]
+                file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                urlretrieve(d, file_title)
+                file_names.append(file_title)
+            elif len(d.split('.')[-1]) &lt; 5:
+                if d.split('=')[-1] == d:
+                    file_title = FILE_STORE + d.split('/')[-1]
+                    urlretrieve(d, file_title)
+                    file_names.append(file_title)
+                    continue
+                suffix = '.' + d.split('.')[-1]
+                file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                urlretrieve(d, file_title)
+                file_names.append(file_title)
+                cls.logger.debug(
+                    'elif_download_files: {},file_title: {}'.format(
+                        download_files, file_title),)
+
+            else:
+                res = requests.get(d,headers=cls.headers)
+                if '系统出现异常' in res.text:
+                    cls.logger.debug('else_if_err: {}'.format(res.text))
+                    continue
+                # print(file_title)
+                # os.system(&quot;pause&quot;)
+                suffix = '.' + d.split('.')[-1]
+                file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                urlretrieve(d, file_title)
+                file_names.append(file_title)
+                cls.logger.debug(
+                    'else_download_files: {},file_title: {}'.format(
+                        download_files, file_title),)
+        return file_names
+    except socket.timeout:
+        count = 1
+        while count &lt;= 3:
+            try:
+                for d in download_files.keys():
+                    if 'ftp' in d:
+                        continue
+                    temp = requests.get(d)
+                    if 'Content-Disposition' in temp.headers.keys():
+                        # print(temp.headers['Content-Disposition'].split('=')[-1])
+                        file_title = unquote(
+                            temp.headers['Content-Disposition'].split('=')[-1])
+                        file_title = FILE_STORE + file_title
+                        print(file_title)
+                        urlretrieve(d, file_title)
+                        file_names.append(file_title)
+                    elif len(d.split('.')[-1]) &lt; 5:
+                        if d.split('=')[-1] == d:
+                            file_title = FILE_STORE + d.split('/')[-1]
+                            urlretrieve(d, file_title)
+                            file_names.append(file_title)
+                            continue
+                        suffix = '.' + d.split('.')[-1]
+                        file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                        urlretrieve(d, file_title)
+                        file_names.append(file_title)
+                        cls.logger.debug(
+                            'elif_download_files: {},file_title: {}'.format(
+                                download_files, file_title), )
+                    else:
+                        res = requests.get(d, headers=cls.headers)
+                        if '系统出现异常' in res.text:
+                            cls.logger.debug('else_if_err: {}'.format(res.text))
+                            continue
+                        suffix = '.' + d.split('.')[-1]
+                        file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                        urlretrieve(d, file_title)
+                        file_names.append(file_title)
+                        cls.logger.debug(
+                            'else_download_files: {},file_title: {}'.format(
+                                download_files, file_title), )
+                return file_names
+
+            except socket.timeout:
+                err_info = 'Reloading for %d time' % count if count == 1 else 'Reloading for %d times' % count
+                print(err_info)
+                count += 1
+        if count &gt; 5:
+            print(&quot;downloading  fialed!&quot;)
+</code></pre>
+<p>requests:在下载文件的时候需要制定stream参数,我这里指定的是一次1024k;<br>
+代码:</p>
+<pre><code>file_names = []
+        try:
+            for d in download_files.keys():
+                if 'ftp' in d:
+                    continue
+                temp = requests.get(d, headers=cls.headers)
+                if 'Content-Disposition' in temp.headers.keys():
+                    suffix = unquote(temp.headers['Content-Disposition'].split('=')[-1]).split('.')[-1]
+                    file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                    with closing(requests.get(
+                            url=d,
+                            verify=False, stream=True)) as res:
+                        # file_title = FILE_STORE + file_title
+                        with open(file_title, 'wb') as fd:
+                            print('下载新的……')
+                            for chunk in res.iter_content(chunk_size=1024):
+                                if chunk:
+                                    fd.write(chunk)
+                        file_names.append(file_title)
+                elif len(d.split('.')[-1]) &lt; 5:
+                    if d.split('=')[-1] == d:
+                        file_title = FILE_STORE + d.split('/')[-1]
+                        with closing(requests.get(
+                                url=d,
+                                verify=False, stream=True)) as res:
+                            # file_title = FILE_STORE + file_title
+                            with open(file_title, 'wb') as fd:
+                                print('下载新的……')
+                                for chunk in res.iter_content(chunk_size=1024):
+                                    if chunk:
+                                        fd.write(chunk)
+                            file_names.append(file_title)
+                        continue
+                    suffix = '.' + d.split('.')[-1]
+                    file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                    with closing(requests.get(
+                            url=d,
+                            verify=False, stream=True)) as res:
+                        # file_title = FILE_STORE + file_title
+                        with open(file_title, 'wb') as fd:
+                            print('下载新的……')
+                            for chunk in res.iter_content(chunk_size=1024):
+                                if chunk:
+                                    fd.write(chunk)
+                        file_names.append(file_title)
+                    cls.logger.debug(
+                        'elif_download_files: {},file_title: {}'.format(
+                            download_files, file_title),)
+                else:
+                    res = requests.get(d,headers=cls.headers)
+                    if '系统出现异常' in res.text:
+                        cls.logger.debug('else_if_err: {}'.format(res.text))
+                        continue
+                    # print(file_title)
+                    # os.system(&quot;pause&quot;)
+                    suffix = '.' + d.split('.')[-1]
+                    file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                    with closing(requests.get(
+                            url=d,
+                            verify=False, stream=True)) as res:
+                        # file_title = FILE_STORE + file_title
+                        with open(file_title, 'wb') as fd:
+                            print('下载新的……')
+                            for chunk in res.iter_content(chunk_size=1024):
+                                if chunk:
+                                    fd.write(chunk)
+                        file_names.append(file_title)
+                    cls.logger.debug(
+                        'else_download_files: {},file_title: {}'.format(
+                            download_files, file_title),)
+            return file_names
+        except Exception as e:
+            print(e)
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://17637462979.github.io/tag/AwOSuK6em" class="tag">
+                    tips
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/J4E9ePz_Az" class="tag">
+                    文件下载
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/hBlLSI3T5L" class="tag">
+                    随笔
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://17637462979.github.io/post/faker_data">
+                  <h3 class="post-title">
+                    faker_data
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '777c3f00411949215193',
+        clientSecret: '66265e6e9aea1380946c6e10861c63014a29dfc3',
+        repo: '17637462979.github.io',
+        owner: '17637462979',
+        admin: ['17637462979'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

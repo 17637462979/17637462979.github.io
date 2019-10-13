@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>utf-8和Unicode的区别【转】 | CoderDogZ</title>
+<meta name="description" content="犹豫就会白给">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570977016136">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://17637462979.github.io">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1570977016136" class="site-logo">
+        <h1 class="site-title">CoderDogZ</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      犹豫就会白给
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://17637462979.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">utf-8和Unicode的区别【转】</h2>
+            <div class="post-date">2019-10-13</div>
+            
+            <div class="post-content">
+              <p>(https://www.cnblogs.com/dhsz/p/7737480.html)<br>
+ps:通俗易懂的一篇文章</p>
+<p>utf-8和Unicode到底有什么区别？是存储方式不同？编码方式不同？它们看起来似乎很相似，但是实际上他们并不是同一个层次的概念</p>
+<p>要想先讲清楚他们的区别，首先应该讲讲Unicode的来由。</p>
+<ul>
+<li>
+<p>众所周知，在盘古开天辟地之前,sorry ,走错片场了(⊙o⊙)…在计算机发明的时候 ,由于计算机你只能表示二进制的数据，美帝人民为了交流通信方便，约定了一个编码系统，就是ASCII码，把abc..xyz...ABC...XYZ...!@#...等字符分别和0,1,2,3,4......对应，发现差不多刚好128个数，半个字节的长度，为了防止以后需要为新的符号编码，于是干脆取一个字节，最高位置为0。后七位从0-127分别对每一个符号编码。</p>
+<ul>
+<li>于是，计算机每次读取一个字节，然后参照ASCII表把这些编码翻译成字符。美国人民很高兴，拿着自己玩去了.......</li>
+</ul>
+</li>
+<li>
+<p>后来欧洲人也玩计算机，发现不行啊，还有很多符号（法语，德语）ASCII没办法表示啊，于是欧洲人自己也撸了一套编码，一个字节的长度，把最高位也用掉了。这套编码叫ISO。</p>
+<ul>
+<li>和ASCII表类似，计算机也是每次只读一个字节，然后按照ISO表，解码出字符。于是欧洲人民也很高兴。</li>
+</ul>
+</li>
+<li>
+<p>中国人不高兴了，特么我们汉字有几万个，常用的就有几千个，没有两个字节根本交不了货。于是勤劳勇敢的中国人民就破天荒的用了两个字节来表示中文。整出一套GBK。为了现实我中华民族兼容并蓄，我们兼容了ASCII编码。</p>
+<ul>
+<li>gbk编码规定，计算机不能在每次都只读一个字节那么死板了，你要先看看第一位是不是为0，要是为0 的话，就当作ASCII码来读入一个字节，不然的话就读入两个字节。</li>
+<li>计算机 : WTF ?? !!</li>
+</ul>
+</li>
+</ul>
+<p>于是天下就很乱了，欧洲人看不懂我们发过去的信息，我们也看不懂他们的东西，美国人看不懂我的东西，不过我们能看懂他们的信息。。。哈哈。</p>
+<p>总之，天下大乱，群雄并起，百姓生灵涂........</p>
+<p>这个时候，就有个国际组织站出来了，说，这么着吧，我来撸一套编码，把大家的编码都归纳进来。于是unicode编码就出现了。这套编码表的编号从0一直算到了100多万（三个字节）。每一个区间都对应着一种语言的编码。目前几乎收纳了全世界大部分的字符。所有的字符都有唯一的编号，这就解决了解码的冲突，于是天下大定！但是，unicode把大家都归纳进来，却没有为编码的二进制传输和二进制解码做出规定。只留下一句：大哥只能帮你到这里了。</p>
+<blockquote>
+<p>我知道你一定在想，要个毛的规定啊，每次让计算机读取三个字节然后参照Unicode表解码就好了。想法是好的，但是如果类似于1号编码这样的小数据编号也要三个字节的话，那么也就是0x000001,这简直就是浪费啊，明明一个字节就可以表示了，你非得整三个，所以你到底是几个意思呢？</p>
+</blockquote>
+<p>不管怎么样，大哥虽然走了，但是问题还得解决啊，于是，就出现了如下解决方案：uft-8，utf-16，utf-32这些编码方案。utf-16是用两个字节来编码所有的字符，utf-32则选择用4个字节来编码。下面只讲一下utf-8这种解决方案，因为它用的最多，用得最多是因为在当时它的方案最好，最节省资源。</p>
+<ul>
+<li>utf-8</li>
+</ul>
+<p>utf-8为了节省资源，采用变长编码，编码长度从1个字节到6个字节不等</p>
+<figure data-type="image" tabindex="1"><img src="https://upload-images.jianshu.io/upload_images/689802-464e92357be25120.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="image"></figure>
+<ul>
+<li>我知道你想说，明明看起来utf-16更加节省资源，节省空间，正常人都看得出来。但实际上，当时，互联网上绝大部分存在的资源都是英文的，英文在utf-16中也是2个字节，而在utf-8中则是1个字节。在当时，显然是utf-8更加节省资源。现在我们在中文世界里来比较他们，则是utf-16更加节省资源。</li>
+</ul>
+<p>OK，关于unicode和utf-8的区别已经解释完毕了。下面用一个图来巩固一下那些区别</p>
+<figure data-type="image" tabindex="2"><img src="https://upload-images.jianshu.io/upload_images/689802-0c26f194d6dbc917.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1136/format/webp" alt="image"></figure>
+<p><a href="http://www.jianshu.com/p/36d20de2a1ee">原文链接:</a></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://17637462979.github.io/tag/UVUK4jge5" class="tag">
+                    编码
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/AwOSuK6em" class="tag">
+                    tips
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://17637462979.github.io/post/fiddler-zhua-bao-xian-shi-luan-ma">
+                  <h3 class="post-title">
+                    fiddler抓包显示乱码
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '777c3f00411949215193',
+        clientSecret: '66265e6e9aea1380946c6e10861c63014a29dfc3',
+        repo: '17637462979.github.io',
+        owner: '17637462979',
+        admin: ['17637462979'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

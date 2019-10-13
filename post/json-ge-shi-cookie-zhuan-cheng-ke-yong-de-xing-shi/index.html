@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>json格式cookie转成可用的形式 | CoderDogZ</title>
+<meta name="description" content="犹豫就会白给">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1570977016136">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://17637462979.github.io">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1570977016136" class="site-logo">
+        <h1 class="site-title">CoderDogZ</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      犹豫就会白给
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://17637462979.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">json格式cookie转成可用的形式</h2>
+            <div class="post-date">2019-10-13</div>
+            
+            <div class="post-content">
+              <p><strong>使用edit this cookie导出的cookie是无法直接使用的所以需要转一下</strong><br>
+<strong>以下是edit this cookie导出的cookie</strong><br>
+cookies= [<br>
+{<br>
+&quot;domain&quot;: &quot;.jianshu.com&quot;,<br>
+&quot;expirationDate&quot;: 1551985676.351818,<br>
+&quot;hostOnly&quot;: false,<br>
+&quot;httpOnly&quot;: true,<br>
+&quot;name&quot;: &quot;_m7e_session_core&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: true,<br>
+&quot;session&quot;: false,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;915b30af3bea0a690d6b6a960322675d&quot;,<br>
+&quot;id&quot;: 1<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;.jianshu.com&quot;,<br>
+&quot;hostOnly&quot;: false,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;Hm_lpvt_0c0e9d9b1e7d617b3e6842e85b9fb068&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: true,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;1551963742&quot;,<br>
+&quot;id&quot;: 2<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;.jianshu.com&quot;,<br>
+&quot;expirationDate&quot;: 1583499742,<br>
+&quot;hostOnly&quot;: false,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;Hm_lvt_0c0e9d9b1e7d617b3e6842e85b9fb068&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: false,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;1551189568,1551189734,1551708932,1551963705&quot;,<br>
+&quot;id&quot;: 3<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;.jianshu.com&quot;,<br>
+&quot;expirationDate&quot;: 1553173330.383306,<br>
+&quot;hostOnly&quot;: false,<br>
+&quot;httpOnly&quot;: true,<br>
+&quot;name&quot;: &quot;remember_user_token&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: true,<br>
+&quot;session&quot;: false,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;W1sxMzg3MzQ2MF0sIiQyYSQxMSRVVlNDWEVwNWc4dWZZZGRGQ096dXMuIiwiMTU1MTk2MzczMC4xMzk3MzciXQ%3D%3D--ddc058bf72cb61aee065900d3bd422f26026ec6c&quot;,<br>
+&quot;id&quot;: 4<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;.jianshu.com&quot;,<br>
+&quot;expirationDate&quot;: 7859163742,<br>
+&quot;hostOnly&quot;: false,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;sensorsdata2015jssdkcross&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: false,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;%7B%22distinct_id%22%3A%221692a1a66b7606-083b483c2f27ac-1333063-1049088-1692a1a66b85d5%22%2C%22%24device_id%22%3A%221692a1a66b7606-083b483c2f27ac-1333063-1049088-1692a1a66b85d5%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E8%87%AA%E7%84%B6%E6%90%9C%E7%B4%A2%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22https%3A%2F%2Fwww.baidu.com%2Flink%22%2C%22%24latest_referrer_host%22%3A%22www.baidu.com%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC%22%7D%2C%22first_id%22%3A%22%22%7D&quot;,<br>
+&quot;id&quot;: 5<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;www.jianshu.com&quot;,<br>
+&quot;expirationDate&quot;: 1582725568,<br>
+&quot;hostOnly&quot;: true,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;__yadk_uid&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: false,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;2hrhXccCAbHk9F5hBrUu9jl5auvIlVwU&quot;,<br>
+&quot;id&quot;: 6<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;www.jianshu.com&quot;,<br>
+&quot;hostOnly&quot;: true,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;default_font&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: true,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;font2&quot;,<br>
+&quot;id&quot;: 7<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;www.jianshu.com&quot;,<br>
+&quot;hostOnly&quot;: true,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;locale&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: true,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;zh-CN&quot;,<br>
+&quot;id&quot;: 8<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;www.jianshu.com&quot;,<br>
+&quot;hostOnly&quot;: true,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;read_mode&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: true,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;day&quot;,<br>
+&quot;id&quot;: 9<br>
+},<br>
+{<br>
+&quot;domain&quot;: &quot;www.jianshu.com&quot;,<br>
+&quot;hostOnly&quot;: true,<br>
+&quot;httpOnly&quot;: false,<br>
+&quot;name&quot;: &quot;signin_redirect&quot;,<br>
+&quot;path&quot;: &quot;/&quot;,<br>
+&quot;sameSite&quot;: &quot;no_restriction&quot;,<br>
+&quot;secure&quot;: false,<br>
+&quot;session&quot;: true,<br>
+&quot;storeId&quot;: &quot;0&quot;,<br>
+&quot;value&quot;: &quot;https%3A%2F%2Fwww.jianshu.com%2F&quot;,<br>
+&quot;id&quot;: 10<br>
+}<br>
+]<br>
+<strong>转换</strong><br>
+import http.cookiejar</p>
+<p>cookiejar = http.cookiejar.CookieJar()<br>
+for cookie in cookies:<br>
+    cookiejar.set_cookie(<br>
+        http.cookiejar.Cookie(version=0, name=cookie['name'], value=cookie['value'], port=None, port_specified=False,<br>
+                         domain=cookie['domain'], domain_specified=False, domain_initial_dot=False, path=cookie['path'],<br>
+                         path_specified=True, secure=cookie['secure'], expires=None, discard=True, comment=None,<br>
+                         comment_url=None, rest={'HttpOnly': None}, rfc2109=False))</p>
+<p># print(cookiejar)</p>
+<p>res = requests.get(url=url](qq://txfile/#)',headers=headers,cookies=cookiejar)<br>
+print(res.text)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://17637462979.github.io/tag/Itt74QMa6" class="tag">
+                    cookie
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/AwOSuK6em" class="tag">
+                    tips
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://17637462979.github.io/post/zheng-ze-biao-da-shi-fan-xuan">
+                  <h3 class="post-title">
+                    正则表达式反选
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '777c3f00411949215193',
+        clientSecret: '66265e6e9aea1380946c6e10861c63014a29dfc3',
+        repo: '17637462979.github.io',
+        owner: '17637462979',
+        admin: ['17637462979'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
