@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Markdown语法收藏 | CoderDogZ</title>
+<meta name="description" content="犹豫就会白给">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571757679348">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://17637462979.github.io">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1571757679348" class="site-logo">
+        <h1 class="site-title">CoderDogZ</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      犹豫就会白给
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://17637462979.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Markdown语法收藏</h2>
+            <div class="post-date">2019-10-22</div>
+            
+              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/markdown-yu-fa-shou-cang.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p><a href="https://www.jianshu.com/p/d1e1089c6fc6?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin">原文链接</a><br>
+看过很多markdown的教程，要么废话太多泛泛而谈，要么粗略简要一带而过。如果你想做为手册查阅，或想了解简书Markdown使用的一些干货，那么这篇文章你不容错过。</p>
+<p>一. Markdown是什么WHAT</p>
+<p>程序员必备<br>
+Markdown是一种轻量级的「标记语言」</p>
+<p>Markdown可以使用普通文本编辑器编写，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
+<p>二. 为什么选择 Markdown WHY<br>
+选择 Markdown 理由只有一个：方便，节省时间</p>
+<p>☑ 语法简洁，没有任何编程基础的人10分钟语言即可上手<br>
+☑ 注重内容，专注于内容编写，不再因为格式排版而苦恼<br>
+☑ 易阅读性，即便没有经过转换，大部分内容仍可阅读<br>
+☑ 易编辑性，任何文本编辑器都能编辑 Markdown 文件<br>
+☑ 跨平台性，由于是纯文本文件，不存在格式兼容的问题<br>
+☑ 导出方便，支持导出为 HTML，PDF等常见格式</p>
+<p>三. 如何使用 MarkdownHOW</p>
+<ol>
+<li>标题：</li>
+</ol>
+<p>Markdown支持6种级别的标题，对应html标签 h1 ~ h6</p>
+<h1 id="h1">h1</h1>
+<h2 id="h2">h2</h2>
+<h3 id="h3">h3</h3>
+<h4 id="h4">h4</h4>
+<h5 id="h5">h5</h5>
+<h6 id="h6">h6</h6>
+<ol start="2">
+<li>段落及区块引用：</li>
+</ol>
+<blockquote>
+<p>这段文字将被高亮显示,多敲<br/><br/><br/>可以换多个空行,输入多个&gt; &gt;&gt;可以实现嵌套<br>
+这段文字将被高亮显示,多敲</p>
+</blockquote>
+<p>可以换多个空行,输入多个&gt;</p>
+<p>可以实现嵌套</p>
+<ol start="3">
+<li>字体样式：</li>
+</ol>
+<p>序号	源代码	效果<br>
+1	<s>删除线</s>	删除线<br>
+2	<em>斜体字</em>或_斜体字_	斜体字<br>
+3	<strong>粗体</strong> 或__粗体__	粗体<br>
+4	<em><strong>粗斜体</strong></em> 或___粗斜体___	粗斜体<br>
+5	上标：O<sup>2</sup>	X2<br>
+6	下标：H<sub>2</sub>O	H2O<br>
+7	字体颜色$\color{green}{绿色} $	\color{green}{绿色}<br>
+4. 图片和链接：</p>
+<p><a href="https://www.jianshu.com/u/32ab4b968e34">普通链接</a><br>
+普通链接</p>
+<p>直接链接：<a href="https://www.jianshu.com/u/32ab4b968e34">https://www.jianshu.com/u/32ab4b968e34</a><br>
+直接链接：https://www.jianshu.com/u/32ab4b968e34</p>
+<p>邮箱地址自动链接 nielifei.cn@gmail.com<br>
+邮箱地址自动链接 nielifei.cn@gmail.com</p>
+<figure data-type="image" tabindex="1"><img src="https://upload-images.jianshu.io/upload_images/3668672-847b228d15e1e9d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片链接，可以添加备注" title="markdown"></figure>
+<p>图片链接，可以添加备注<br>
+5. 代码高亮：</p>
+<p>行内高亮 ： <code>npm install marked</code><br>
+行内高亮 ：npm install marked</p>
+<p>实现代码块适配合适的高亮方法，可以用 ``` 包裹一段代码，并指定一种语言。</p>
+<pre><code>```javascript
+    function test() {
+        console.log(&quot;后面跟语言有一定效果&quot;);
+    }
+```
+</code></pre>
+<p>function test() {<br>
+console.log(&quot;后面跟语言有一定效果!&quot;);<br>
+}<br>
+支持的语言： bash, basic,cmake, css, delphi, django, dockerfile, go, http,,ini, java, javascript, json, leaf, less, matlab, perl, php, python, ruby, rust, scss, sql, stylus, swift, typescript, vbscript, xml, yaml等</p>
+<ol start="6">
+<li>表格：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:在左靠左</th>
+<th style="text-align:center">:在两端居中</th>
+<th style="text-align:right">:在右靠右</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:center">A</td>
+<td style="text-align:right">A</td>
+</tr>
+<tr>
+<td style="text-align:left">B</td>
+<td style="text-align:center">B</td>
+<td style="text-align:right">B</td>
+</tr>
+<tr>
+<td style="text-align:left">C</td>
+<td style="text-align:center">C</td>
+<td style="text-align:right">C</td>
+</tr>
+</tbody>
+</table>
+<p>:在左靠左	:在两端居中	:在右靠右<br>
+A	A	A<br>
+B	B	B<br>
+C	C	C<br>
+7. 无序列表：</p>
+<p>*/-/+/&gt;/#通用，后面跟空格即可，另外再输入1个TAB或2 ~ 4个空格可实现层级关系</p>
+<ul>
+<li>一级列表
+<ul>
+<li>二级列表
+<ul>
+<li>三级列表<br>
+一级列表<br>
+二级列表<br>
+三级列表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="8">
+<li>有序列表：</li>
+</ol>
+<p>注意数字后面有空格，序号递增排列，即便输错也会自动纠正</p>
+<ol>
+<li>第一行</li>
+<li>第二行</li>
+<li>第三行<br>
+第一行<br>
+第二行<br>
+第三行</li>
+<li>分割线：</li>
+</ol>
+<p>可以在一行中用 3 个以上的* 或 - 或 _来建立一个分隔线，行内不能有其他东西，为了兼容其他平台，可以在符号中间插入空格。</p>
+<hr>
+<hr>
+<hr>
+<ol start="10">
+<li>转义字符：</li>
+</ol>
+<p>```<br>
+&gt;<br>
+&lt;br&gt;</p>
+<pre><code>&gt;
+&lt;br&gt;
+
+11. 脚注：
+
+生成一个脚注[^footnote].
+  [^footnote]: 这里是 **脚注** 的 *内容*.
+生成一个脚注[1].
+
+12. 特殊符号 文本通用，非MD独有：
+
+常用排版 : ▌▍◆★☆☁➤➜❤➊➋➌
+TodoList : ✅☑✓✔√☓☒✘ㄨ✕✖✗❌❎
+emoji : 🌹🍀🌙🍂🍃🌷💎🔥⭐🍄🏆
+
+更多的特殊符号就不一一列举了，想要了解更多打法的请查阅下面链接，也可以使用搜狗输入法：
+
+[HTML中的特殊符号](https://www.w3school.com.cn/tags/html_ref_symbols.html)
+[Emoji](https://emojipedia.org/)
+
+13. Markdown编辑器：
+
+在线版，推荐和印象笔记结合的马克飞象
+
+- [马克飞象](https://maxiang.io/)
+作业部落
+浏览器插件：
+
+马克飞象
+- [Markdown-here](https://markdown-here.com/)
+客户端：
+
+Mac：[MacDown](http://macdown.uranusjr.com/)
+Windows：[MarkdownPad](http://markdownpad.com/)、[MarkPad](http://code52.org/DownmarkerWPF/)
+
+推荐一个好用的md编辑器[typora](https://typora.io)</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://17637462979.github.io/tag/uvurinpQ8" class="tag">
+                    转载
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/SsGcEF5AlF" class="tag">
+                    markdown
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://17637462979.github.io/post/he-ji-greaterzheng-ze-biao-da-shi">
+                  <h3 class="post-title">
+                    [合集]---&gt;正则表达式
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '777c3f00411949215193',
+        clientSecret: '66265e6e9aea1380946c6e10861c63014a29dfc3',
+        repo: '17637462979.github.io',
+        owner: '17637462979',
+        admin: ['17637462979'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
