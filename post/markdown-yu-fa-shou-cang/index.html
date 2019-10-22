@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571757679348">
+<link rel="shortcut icon" href="https://17637462979.github.io/favicon.ico?v=1571758685018">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://17637462979.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://17637462979.github.io">
-        <img src="https://17637462979.github.io/images/avatar.png?v=1571757679348" class="site-logo">
+        <img src="https://17637462979.github.io/images/avatar.png?v=1571758685018" class="site-logo">
         <h1 class="site-title">CoderDogZ</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -242,45 +242,61 @@ C	C	C<br>
 <ol start="10">
 <li>转义字符：</li>
 </ol>
-<p>```<br>
-&gt;<br>
-&lt;br&gt;</p>
-<pre><code>&gt;
+<pre><code>\
+\&gt;
+\&lt;br&gt;
+
+&gt;
 &lt;br&gt;
-
-11. 脚注：
-
-生成一个脚注[^footnote].
-  [^footnote]: 这里是 **脚注** 的 *内容*.
-生成一个脚注[1].
-
-12. 特殊符号 文本通用，非MD独有：
-
-常用排版 : ▌▍◆★☆☁➤➜❤➊➋➌
-TodoList : ✅☑✓✔√☓☒✘ㄨ✕✖✗❌❎
-emoji : 🌹🍀🌙🍂🍃🌷💎🔥⭐🍄🏆
-
-更多的特殊符号就不一一列举了，想要了解更多打法的请查阅下面链接，也可以使用搜狗输入法：
-
-[HTML中的特殊符号](https://www.w3school.com.cn/tags/html_ref_symbols.html)
-[Emoji](https://emojipedia.org/)
-
-13. Markdown编辑器：
-
-在线版，推荐和印象笔记结合的马克飞象
-
-- [马克飞象](https://maxiang.io/)
-作业部落
-浏览器插件：
-
-马克飞象
-- [Markdown-here](https://markdown-here.com/)
-客户端：
-
-Mac：[MacDown](http://macdown.uranusjr.com/)
-Windows：[MarkdownPad](http://markdownpad.com/)、[MarkPad](http://code52.org/DownmarkerWPF/)
-
-推荐一个好用的md编辑器[typora](https://typora.io)</code></pre>
+</code></pre>
+<ol>
+<li>脚注：<br>
+生成一个脚注[1].<br>
+生成一个脚注<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</li>
+</ol>
+<ol start="12">
+<li>特殊符号 文本通用，非MD独有：</li>
+</ol>
+<p>常用排版 : ▌▍◆★☆☁➤➜❤➊➋➌<br>
+TodoList : ✅☑✓✔√☓☒✘ㄨ✕✖✗❌❎<br>
+emoji : 🌹🍀🌙🍂🍃🌷💎🔥⭐🍄🏆<br>
+更多的特殊符号就不一一列举了，想要了解更多打法的请查阅下面链接，也可以使用搜狗输入法：</p>
+<p><a href="https://www.w3school.com.cn/tags/html_ref_symbols.html">HTML中的特殊符号</a><br>
+<a href="https://emojipedia.org/">Emoji</a></p>
+<ol start="13">
+<li>Markdown编辑器：</li>
+</ol>
+<ul>
+<li>
+<p>在线版，推荐和印象笔记结合的马克飞象</p>
+<ul>
+<li><a href="https://maxiang.io/">马克飞象</a></li>
+<li><a href="https://www.zybuluo.com/mdeditor">作业部落</a></li>
+</ul>
+</li>
+<li>
+<p>浏览器插件：</p>
+<ul>
+<li><a href="https://maxiang.io/">马克飞象</a></li>
+<li><a href="https://markdown-here.com/">Markdown-here</a></li>
+</ul>
+</li>
+<li>
+<p>客户端：</p>
+<ul>
+<li>Mac：<a href="http://macdown.uranusjr.com/">MacDown</a></li>
+<li>Windows：<a href="http://markdownpad.com/">MarkdownPad</a>、<a href="http://code52.org/DownmarkerWPF/">MarkPad</a></li>
+</ul>
+</li>
+</ul>
+<p>推荐一个好用的md编辑器<a href="https://typora.io">typora</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这里是 <strong>脚注</strong> 的 <em>内容</em>. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
             </div>
             
