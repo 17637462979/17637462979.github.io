@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | CoderDogZ</title>
+<title>centos7中安装python3.7.3 | CoderDogZ</title>
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,21 +98,67 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">centos7中安装python3.7.3</h2>
+            <div class="post-date">2019-10-30</div>
+            
+              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/centos7-zhong-an-zhuang-python373.jpg')">
+              </div>
             
             <div class="post-content">
-              <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h3 id="关于本站">🏠 关于本站</h3>
-<h5 id="本站由gridea强力驱动">本站由<a href="https://gridea.dev/">Gridea</a>强力驱动</h5>
-<h3 id="博主是谁">👨‍💻 博主是谁</h3>
-<h3 id="兴趣爱好">⛹ 兴趣爱好</h3>
-<h3 id="联系我呀">📬 联系我呀</h3>
+              <h3 id="服务器版本">服务器版本</h3>
+<ul>
+<li>环境： CentOS_7 （root用户）</li>
+<li>软件版本： python_3.7.3</li>
+</ul>
+<h3 id="安装依赖">安装依赖</h3>
+<ul>
+<li>yum -y groupinstall &quot;Development tools&quot;</li>
+<li>yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</li>
+</ul>
+<h3 id="下载软件源码-python-373">下载软件源码 Python-3.7.3</h3>
+<ul>
+<li>wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz<br>
+<code>如果下载慢可以使用idm下载之后在使用fpt上传</code></li>
+</ul>
+<h3 id="解压并编译源码">解压并编译源码</h3>
+<ul>
+<li>tar zxvf Python-3.7.3.tgz</li>
+<li>cd Python-3.7.3/</li>
+<li>./configure --prefix=/usr/local/python-3.7.3</li>
+<li>make &amp;&amp; make install</li>
+</ul>
+<h3 id="配置软链接">配置软链接</h3>
+<ul>
+<li>ln -s /usr/local/python-3.7.3/bin/python3.7 /usr/bin/python3</li>
+<li>ln -s /usr/local/python-3.7.3/bin/pip3.7 /usr/bin/pip3</li>
+</ul>
+<h3 id="验证">验证</h3>
+<p>python3 -V<br>
+pip3 -V</p>
 
             </div>
             
+              <div class="tag-container">
+                
+                  <a href="https://17637462979.github.io/tag/Jt74yqfeI" class="tag">
+                    contso7
+                  </a>
+                
+                  <a href="https://17637462979.github.io/tag/Ud8g7wKG1l" class="tag">
+                    环境安装
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://17637462979.github.io/post/markdown-yu-fa-shou-cang">
+                  <h3 class="post-title">
+                    Markdown语法收藏
+                  </h3>
+                </a>
+              </div>
             
 
             
