@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>一些网址[持续不定期更新] | CoderDogZ</title>
+<title>[docker系列(1)]前戏 | CoderDogZ</title>
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,63 +98,40 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">一些网址[持续不定期更新]</h2>
-            <div class="post-date">2019-10-13</div>
-            
-              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/yi-xie-wang-zhi-chi-xu-bu-ding-qi-geng-xin.jpg')">
-              </div>
+            <h2 class="post-title">[docker系列(1)]前戏</h2>
+            <div class="post-date">2019-11-06</div>
             
             <div class="post-content">
-              <ul>
-<li>
-<p><a href="https://github.com/waylau/git-for-win">git 国内下载地址</a></p>
+              <h3 id="docker安装">docker安装</h3>
+<h4 id="系统版本centos7">系统版本:centos7</h4>
+<ol>
+<li>前前戏<br>
+Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。<br>
+Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为   2.6.32-431 或者更高版本。</li>
+<li>使用 yum 安装<pre><code class="language-#查看你当前的内核版本">uname -r
+
+#安装 Docker
+yum -y install docker
+
+#启动 Docker 后台服务
+service docker start
+
+#测试运行 hello-world,由于本地没有hello-world这个镜像，所以会下载一个hello-world的镜像，并在容器内运行。
+docker run hello-world```
+</code></pre>
 </li>
-<li>
-<p><a href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=822434&amp;page=1&amp;authorid=994109">吾爱破解从零开始学安卓逆向教程</a></p>
-</li>
-<li>
-<p><a href="https://httpbin.org/get?show_env=1">程序请求头测试网址</a></p>
-</li>
-<li>
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">anaconda清华大学下载地址,2019年4月19日之后不再更新</a></p>
-</li>
-<li>
-<p><a href="https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html">浏览器信息检测[目前已知:过不了携程]</a></p>
-</li>
-<li>
-<p><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted">twisted.whl下载地址[安装scrapy报错时]</a></p>
-</li>
-<li>
-<p><a href="http://chromedriver.storage.googleapis.com/index.html">Chromedriver下载地址</a></p>
-</li>
-<li>
-<p><a href="https://www.manning.com/books/grokking-algorithms">算法图解原版链接[python2.7实现]</a></p>
-</li>
-<li>
-<p><a href="http://www.geetest.com/demo/">极验demo地址</a></p>
-</li>
-</ul>
+<li>查看docker版本<br>
+<code>docker version 或 docker -v</code></li>
+</ol>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://17637462979.github.io/tag/MMUFntjVn" class="tag">
-                    网址
-                  </a>
-                
-                  <a href="https://17637462979.github.io/tag/mJxrvW3Gty" class="tag">
-                    日常小结
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://17637462979.github.io/post/xiang-mu-zong-jie">
+                <a href="https://17637462979.github.io/post/centos7-zhong-an-zhuang-python373">
                   <h3 class="post-title">
-                    项目总结
+                    centos7中安装python3.7.3
                   </h3>
                 </a>
               </div>

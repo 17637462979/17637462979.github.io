@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>一些网址[持续不定期更新] | CoderDogZ</title>
+<title>[docker系列(2)]常用命令 | CoderDogZ</title>
 <meta name="description" content="犹豫就会白给">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,63 +98,72 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">一些网址[持续不定期更新]</h2>
-            <div class="post-date">2019-10-13</div>
-            
-              <div class="feature-container" style="background-image: url('https://17637462979.github.io/post-images/yi-xie-wang-zhi-chi-xu-bu-ding-qi-geng-xin.jpg')">
-              </div>
+            <h2 class="post-title">[docker系列(2)]常用命令</h2>
+            <div class="post-date">2019-11-06</div>
             
             <div class="post-content">
               <ul>
+<li><code>docker images 列出所有镜像</code></li>
+<li><code>docker ps 列出容器</code><br>
+<img src="https://17637462979.github.io/post-images/1573050443410.png" alt=""><br>
+输出详情介绍：<br>
+CONTAINER ID: 容器 ID。<br>
+IMAGE: 使用的镜像。<br>
+COMMAND: 启动容器时运行的命令。<br>
+CREATED: 容器的创建时间。<br>
+STATUS: 容器状态。<br>
+PORTS: 容器的端口信息和使用的连接类型（tcp\udp）。<br>
+NAMES: 自动分配的容器名称。</li>
+<li><code>docker ps -a 列出所有容器(包括未运行的)</code></li>
+<li><code>docker start :启动一个或多个已经被停止的容器</code></li>
+<li><code>docker stop :停止一个运行中的容器</code></li>
+<li><code>docker restart :重启容器</code></li>
+<li><code>docker rm `docker ps -a -q` 删除所有容器</code></li>
+<li><code>docker rmi `docker images -q` 删除所有镜像</code></li>
+<li>按条件删除镜像
+<ol>
 <li>
-<p><a href="https://github.com/waylau/git-for-win">git 国内下载地址</a></p>
+<p>没有打标签</p>
+<ul>
+<li><code>docker rmi `docker images -q | awk '/^&lt;none&gt;/ { print $3 }'</code></li>
+</ul>
 </li>
 <li>
-<p><a href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=822434&amp;page=1&amp;authorid=994109">吾爱破解从零开始学安卓逆向教程</a></p>
+<p>镜像名包含关键字</p>
+<ul>
+<li><code>docker rmi --force `docker images | grep doss-api | awk '{print $3}'` //其中doss-api为关键字</code></li>
+</ul>
 </li>
 <li>
-<p><a href="https://httpbin.org/get?show_env=1">程序请求头测试网址</a></p>
+<p>再删除镜像之前使用docker stop停止.</p>
 </li>
-<li>
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">anaconda清华大学下载地址,2019年4月19日之后不再更新</a></p>
+</ol>
 </li>
-<li>
-<p><a href="https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html">浏览器信息检测[目前已知:过不了携程]</a></p>
-</li>
-<li>
-<p><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted">twisted.whl下载地址[安装scrapy报错时]</a></p>
-</li>
-<li>
-<p><a href="http://chromedriver.storage.googleapis.com/index.html">Chromedriver下载地址</a></p>
-</li>
-<li>
-<p><a href="https://www.manning.com/books/grokking-algorithms">算法图解原版链接[python2.7实现]</a></p>
-</li>
-<li>
-<p><a href="http://www.geetest.com/demo/">极验demo地址</a></p>
+<li>进入镜像
+<ol>
+<li>使用docker attach进入Docker容器<br>
+<code>docker attach 44fc0f0582d9 #attach后面接CONTAINER_ID</code></li>
+<li>使用docker exec进入Docker容器<br>
+<code>sudo docker exec -it 775c7c9ee1e1 /bin/sh</code></li>
+<li>其他的方法不咋好用就不写了<br>
+####参考链接:</li>
+</ol>
 </li>
 </ul>
+<ol>
+<li>https://www.cnblogs.com/xhyan/p/6593075.html</li>
+<li>https://www.runoob.com/docker/docker-command-manual.html</li>
+<li>https://www.cnblogs.com/yanyouqiang/p/8301856.html</li>
+</ol>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://17637462979.github.io/tag/MMUFntjVn" class="tag">
-                    网址
-                  </a>
-                
-                  <a href="https://17637462979.github.io/tag/mJxrvW3Gty" class="tag">
-                    日常小结
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://17637462979.github.io/post/xiang-mu-zong-jie">
+                <a href="https://17637462979.github.io/post/docker-xi-lie-1qian-xi">
                   <h3 class="post-title">
-                    项目总结
+                    [docker系列(1)]前戏
                   </h3>
                 </a>
               </div>
