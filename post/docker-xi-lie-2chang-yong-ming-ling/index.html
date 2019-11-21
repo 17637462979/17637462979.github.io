@@ -108,20 +108,20 @@ NAMES: 自动分配的容器名称。</li>
 <li><code>docker start :启动一个或多个已经被停止的容器</code></li>
 <li><code>docker stop :停止一个运行中的容器</code></li>
 <li><code>docker restart :重启容器</code></li>
-<li><code>docker rm `docker ps -a -q` 删除所有容器</code></li>
-<li><code>docker rmi `docker images -q` 删除所有镜像</code></li>
+<li><code>docker rm</code>docker ps -a -q<code>删除所有容器</code></li>
+<li><code>docker rmi</code>docker images -q<code>删除所有镜像</code></li>
 <li>按条件删除镜像
 <ol>
 <li>
 <p>没有打标签</p>
 <ul>
-<li><code>docker rmi `docker images -q | awk '/^&lt;none&gt;/ { print $3 }'</code></li>
+<li><code>docker rmi</code>docker images -q | awk '/^<none>/ { print $3 }'`</li>
 </ul>
 </li>
 <li>
 <p>镜像名包含关键字</p>
 <ul>
-<li><code>docker rmi --force `docker images | grep doss-api | awk '{print $3}'` //其中doss-api为关键字</code></li>
+<li><code>docker rmi --force</code>docker images | grep doss-api | awk '{print $3}'<code>//其中doss-api为关键字</code></li>
 </ul>
 </li>
 <li>
@@ -135,11 +135,11 @@ NAMES: 自动分配的容器名称。</li>
 <code>docker attach 44fc0f0582d9 #attach后面接CONTAINER_ID</code></li>
 <li>使用docker exec进入Docker容器<br>
 <code>sudo docker exec -it 775c7c9ee1e1 /bin/sh</code></li>
-<li>其他的方法不咋好用就不写了<br>
-####参考链接:</li>
+<li>其他的方法不咋好用就不写了</li>
 </ol>
 </li>
 </ul>
+<h4 id="参考链接">参考链接:</h4>
 <ol>
 <li>https://www.cnblogs.com/xhyan/p/6593075.html</li>
 <li>https://www.runoob.com/docker/docker-command-manual.html</li>

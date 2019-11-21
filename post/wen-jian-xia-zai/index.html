@@ -99,106 +99,107 @@
 wget:在现在文件的时候存储的文件名只是UrlEncode编码之后的一个字符串,很可能重复;<br>
 就像这种:%e8%bf%99%e6%98%af%e4%b8%80%e4%b8%aa%e6%96%87%e4%bb%b6%e5%90%8d.pdf<br>
 urlretrieve: 引入   --&gt;  from urllib.request import urlretrieve,可能由于库比较古老,在下载大文件的时候会出现死掉的情况,虽然参考了网上大佬的代码,使用socket去避免,但还是效果不好;<br>
-代码:<br>
-//downloadfiles是一个文件下载地址和文件名对应的字典</p>
-<pre><code>    if download_files == {}:
-        return
-    file_names = []
-    try:
-        for d in download_files.keys():
-            # print(d)
-            if 'ftp' in d:
-                continue
-            # print(d)
-            temp = requests.get(d, headers=cls.headers)
-            if 'Content-Disposition' in temp.headers.keys():
-                suffix = unquote(
-                    temp.headers['Content-Disposition'].split('=')[-1]).split('.')[-1]
-                file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
-                urlretrieve(d, file_title)
-                file_names.append(file_title)
-            elif len(d.split('.')[-1]) &lt; 5:
-                if d.split('=')[-1] == d:
-                    file_title = FILE_STORE + d.split('/')[-1]
+代码:</p>
+<pre><code class="language-js">//downloadfiles是一个文件下载地址和文件名对应的字典
+
+        if download_files == {}:
+            return
+        file_names = []
+        try:
+            for d in download_files.keys():
+                # print(d)
+                if 'ftp' in d:
+                    continue
+                # print(d)
+                temp = requests.get(d, headers=cls.headers)
+                if 'Content-Disposition' in temp.headers.keys():
+                    suffix = unquote(
+                        temp.headers['Content-Disposition'].split('=')[-1]).split('.')[-1]
+                    file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
                     urlretrieve(d, file_title)
                     file_names.append(file_title)
-                    continue
-                suffix = '.' + d.split('.')[-1]
-                file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
-                urlretrieve(d, file_title)
-                file_names.append(file_title)
-                cls.logger.debug(
-                    'elif_download_files: {},file_title: {}'.format(
-                        download_files, file_title),)
-
-            else:
-                res = requests.get(d,headers=cls.headers)
-                if '系统出现异常' in res.text:
-                    cls.logger.debug('else_if_err: {}'.format(res.text))
-                    continue
-                # print(file_title)
-                # os.system(&quot;pause&quot;)
-                suffix = '.' + d.split('.')[-1]
-                file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
-                urlretrieve(d, file_title)
-                file_names.append(file_title)
-                cls.logger.debug(
-                    'else_download_files: {},file_title: {}'.format(
-                        download_files, file_title),)
-        return file_names
-    except socket.timeout:
-        count = 1
-        while count &lt;= 3:
-            try:
-                for d in download_files.keys():
-                    if 'ftp' in d:
-                        continue
-                    temp = requests.get(d)
-                    if 'Content-Disposition' in temp.headers.keys():
-                        # print(temp.headers['Content-Disposition'].split('=')[-1])
-                        file_title = unquote(
-                            temp.headers['Content-Disposition'].split('=')[-1])
-                        file_title = FILE_STORE + file_title
-                        print(file_title)
+                elif len(d.split('.')[-1]) &lt; 5:
+                    if d.split('=')[-1] == d:
+                        file_title = FILE_STORE + d.split('/')[-1]
                         urlretrieve(d, file_title)
                         file_names.append(file_title)
-                    elif len(d.split('.')[-1]) &lt; 5:
-                        if d.split('=')[-1] == d:
-                            file_title = FILE_STORE + d.split('/')[-1]
+                        continue
+                    suffix = '.' + d.split('.')[-1]
+                    file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                    urlretrieve(d, file_title)
+                    file_names.append(file_title)
+                    cls.logger.debug(
+                        'elif_download_files: {},file_title: {}'.format(
+                            download_files, file_title),)
+
+                else:
+                    res = requests.get(d,headers=cls.headers)
+                    if '系统出现异常' in res.text:
+                        cls.logger.debug('else_if_err: {}'.format(res.text))
+                        continue
+                    # print(file_title)
+                    # os.system(&quot;pause&quot;)
+                    suffix = '.' + d.split('.')[-1]
+                    file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                    urlretrieve(d, file_title)
+                    file_names.append(file_title)
+                    cls.logger.debug(
+                        'else_download_files: {},file_title: {}'.format(
+                            download_files, file_title),)
+            return file_names
+        except socket.timeout:
+            count = 1
+            while count &lt;= 3:
+                try:
+                    for d in download_files.keys():
+                        if 'ftp' in d:
+                            continue
+                        temp = requests.get(d)
+                        if 'Content-Disposition' in temp.headers.keys():
+                            # print(temp.headers['Content-Disposition'].split('=')[-1])
+                            file_title = unquote(
+                                temp.headers['Content-Disposition'].split('=')[-1])
+                            file_title = FILE_STORE + file_title
+                            print(file_title)
                             urlretrieve(d, file_title)
                             file_names.append(file_title)
-                            continue
-                        suffix = '.' + d.split('.')[-1]
-                        file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
-                        urlretrieve(d, file_title)
-                        file_names.append(file_title)
-                        cls.logger.debug(
-                            'elif_download_files: {},file_title: {}'.format(
-                                download_files, file_title), )
-                    else:
-                        res = requests.get(d, headers=cls.headers)
-                        if '系统出现异常' in res.text:
-                            cls.logger.debug('else_if_err: {}'.format(res.text))
-                            continue
-                        suffix = '.' + d.split('.')[-1]
-                        file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
-                        urlretrieve(d, file_title)
-                        file_names.append(file_title)
-                        cls.logger.debug(
-                            'else_download_files: {},file_title: {}'.format(
-                                download_files, file_title), )
-                return file_names
+                        elif len(d.split('.')[-1]) &lt; 5:
+                            if d.split('=')[-1] == d:
+                                file_title = FILE_STORE + d.split('/')[-1]
+                                urlretrieve(d, file_title)
+                                file_names.append(file_title)
+                                continue
+                            suffix = '.' + d.split('.')[-1]
+                            file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                            urlretrieve(d, file_title)
+                            file_names.append(file_title)
+                            cls.logger.debug(
+                                'elif_download_files: {},file_title: {}'.format(
+                                    download_files, file_title), )
+                        else:
+                            res = requests.get(d, headers=cls.headers)
+                            if '系统出现异常' in res.text:
+                                cls.logger.debug('else_if_err: {}'.format(res.text))
+                                continue
+                            suffix = '.' + d.split('.')[-1]
+                            file_title = FILE_STORE + d.split('=')[-1] + '.' + suffix
+                            urlretrieve(d, file_title)
+                            file_names.append(file_title)
+                            cls.logger.debug(
+                                'else_download_files: {},file_title: {}'.format(
+                                    download_files, file_title), )
+                    return file_names
 
-            except socket.timeout:
-                err_info = 'Reloading for %d time' % count if count == 1 else 'Reloading for %d times' % count
-                print(err_info)
-                count += 1
-        if count &gt; 5:
-            print(&quot;downloading  fialed!&quot;)
+                except socket.timeout:
+                    err_info = 'Reloading for %d time' % count if count == 1 else 'Reloading for %d times' % count
+                    print(err_info)
+                    count += 1
+            if count &gt; 5:
+                print(&quot;downloading  fialed!&quot;)
 </code></pre>
 <p>requests:在下载文件的时候需要制定stream参数,我这里指定的是一次1024k;<br>
 代码:</p>
-<pre><code>file_names = []
+<pre><code class="language-js">file_names = []
         try:
             for d in download_files.keys():
                 if 'ftp' in d:
