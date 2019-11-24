@@ -97,62 +97,13 @@
 </div>
       <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
         <div class="w-full md:w-2/3 mt-6">
-          <h1 class="text-4xl">[docker系列(2)]常用命令</h1>
+          <h1 class="text-4xl">命令行工具进行的提交没有在github主页上显示出来</h1>
           
           <div class="mt-6 lg:mt-10 post-content">
-            <ul>
-<li><code>docker images 列出所有镜像</code></li>
-<li><code>docker ps 列出容器</code><br>
-<img src="https://17637462979.github.io/post-images/1573050443410.png" alt=""><br>
-输出详情介绍：<br>
-CONTAINER ID: 容器 ID。<br>
-IMAGE: 使用的镜像。<br>
-COMMAND: 启动容器时运行的命令。<br>
-CREATED: 容器的创建时间。<br>
-STATUS: 容器状态。<br>
-PORTS: 容器的端口信息和使用的连接类型（tcp\udp）。<br>
-NAMES: 自动分配的容器名称。</li>
-<li><code>docker ps -a 列出所有容器(包括未运行的)</code></li>
-<li><code>docker start :启动一个或多个已经被停止的容器</code></li>
-<li><code>docker stop :停止一个运行中的容器</code></li>
-<li><code>docker restart :重启容器</code></li>
-<li><code>docker rm</code>docker ps -a -q<code>删除所有容器</code></li>
-<li><code>docker rmi</code>docker images -q<code>删除所有镜像</code></li>
-<li>按条件删除镜像
-<ol>
-<li>
-<p>没有打标签</p>
-<ul>
-<li><code>docker rmi</code>docker images -q | awk '/^<none>/ { print $3 }'`</li>
-</ul>
-</li>
-<li>
-<p>镜像名包含关键字</p>
-<ul>
-<li><code>docker rmi --force</code>docker images | grep doss-api | awk '{print $3}'<code>//其中doss-api为关键字</code></li>
-</ul>
-</li>
-<li>
-<p>再删除镜像之前使用docker stop停止.</p>
-</li>
-</ol>
-</li>
-<li>进入镜像
-<ol>
-<li>使用docker attach进入Docker容器<br>
-<code>docker attach 44fc0f0582d9 #attach后面接CONTAINER_ID</code></li>
-<li>使用docker exec进入Docker容器<br>
-<code>sudo docker exec -it 775c7c9ee1e1 /bin/sh</code></li>
-<li>其他的方法不咋好用就不写了</li>
-</ol>
-</li>
-</ul>
-<h4 id="参考链接">参考链接:</h4>
-<ol>
-<li>https://www.cnblogs.com/xhyan/p/6593075.html</li>
-<li>https://www.runoob.com/docker/docker-command-manual.html</li>
-<li>https://www.cnblogs.com/yanyouqiang/p/8301856.html</li>
-</ol>
+            <p>如果你也遇到了这种情况,那就说明你没有提交成功!没有提交成功!没有提交成功!没有提交成功!<br>
+在这种情况下:<br>
+init --&gt; add . --&gt; commit ----&gt; push.<br>
+记住push就行了</p>
 
           </div>
           
@@ -189,20 +140,18 @@ NAMES: 自动分配的容器名称。</li>
           <div class="w-full md:w-1/3">
             <div class="mt-6 md:pl-8">
               <h4 class="text-base font-thin text-gray-700 mb-2">发布时间</h4>
-              <div class="text-lg mb-6">2019-11-06</div>
+              <div class="text-lg mb-6">2019-11-24</div>
               <h4 class="text-base font-thin text-gray-700 mb-2">标签</h4>
               <div class="mb-6">
                 
               </div>
               <h4 class="text-base font-thin text-gray-700 mb-2">阅读时间</h4>
-              <div class="text-lg mb-6">2 min read</div>
+              <div class="text-lg mb-6">1 min read</div>
               <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
               <div class="border-b border-gray-400">
                 
 
   
-    
-  
 
   
     
@@ -216,6 +165,8 @@ NAMES: 自动分配的容器名称。</li>
     
   
 
+  
+    
   
 
   

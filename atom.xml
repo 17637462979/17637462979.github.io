@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://17637462979.github.io</id>
     <title>CoderDogZ</title>
-    <updated>2019-11-24T00:28:39.741Z</updated>
+    <updated>2019-11-24T00:31:34.150Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://17637462979.github.io"/>
     <link rel="self" href="https://17637462979.github.io/atom.xml"/>
@@ -11,6 +11,20 @@
     <logo>https://17637462979.github.io/images/avatar.png</logo>
     <icon>https://17637462979.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, CoderDogZ</rights>
+    <entry>
+        <title type="html"><![CDATA[命令行工具进行的提交没有在github主页上显示出来]]></title>
+        <id>https://17637462979.github.io/post/u97SfyXMh</id>
+        <link href="https://17637462979.github.io/post/u97SfyXMh">
+        </link>
+        <updated>2019-11-24T00:30:57.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA['fatal:remote origin already exists']]></title>
+        <id>https://17637462979.github.io/post/Lo4Icet2x</id>
+        <link href="https://17637462979.github.io/post/Lo4Icet2x">
+        </link>
+        <updated>2019-11-24T00:30:36.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[win10安装mitmproxy，成功之后访问mitm.it出现不了下载证书页面]]></title>
         <id>https://17637462979.github.io/post/WaZ5PZDMU</id>
@@ -66,19 +80,5 @@
         <link href="https://17637462979.github.io/post/he-ji">
         </link>
         <updated>2019-10-13T23:28:59.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Flask 反向生成models.py]]></title>
-        <id>https://17637462979.github.io/post/he-ji-greaterflask_tips</id>
-        <link href="https://17637462979.github.io/post/he-ji-greaterflask_tips">
-        </link>
-        <updated>2019-10-13T23:25:37.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[插入MySQL报错‘pymysql.err.DataError: (1406, "Data too long for column 'url' at row 1")’]]></title>
-        <id>https://17637462979.github.io/post/he-ji-greatermysql_err</id>
-        <link href="https://17637462979.github.io/post/he-ji-greatermysql_err">
-        </link>
-        <updated>2019-10-13T23:23:04.000Z</updated>
     </entry>
 </feed>
