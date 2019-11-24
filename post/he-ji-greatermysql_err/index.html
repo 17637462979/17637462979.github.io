@@ -97,16 +97,17 @@
 </div>
       <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
         <div class="w-full md:w-2/3 mt-6">
-          <h1 class="text-4xl">[合集]---&gt;mysql_err</h1>
+          <h1 class="text-4xl">插入MySQL报错‘pymysql.err.DataError: (1406, &#34;Data too long for column &#39;url&#39; at row 1&#34;)’</h1>
           
             <img class="max-w-full mt-6 rounded-sm" src="https://17637462979.github.io/post-images/he-ji-greatermysql_err.jpg" alt="">
           
           <div class="mt-6 lg:mt-10 post-content">
-            <p>#　插入MySQL报错‘pymysql.err.DataError: (1406, &quot;Data too long for column 'url' at row 1&quot;)’<br>
+            <p>插入MySQL报错‘pymysql.err.DataError: (1406, &quot;Data too long for column 'url' at row 1&quot;)’<br>
 在插入MySQL的字符太多，此时将MySQL的模式改为非严格模式。<br>
-MySQL中运行：<br>
-mysql&gt; SET @@global.sql_mode= ‘’;<br>
-<strong>【搬运国外大神解释】</strong></p>
+MySQL中运行：</p>
+<pre><code class="language-js">mysql&gt; SET @@global.sql_mode= '';
+</code></pre>
+<p><strong>【搬运国外大神解释】</strong></p>
 <p>MySQL will truncate any insert value that exceeds the specified column width.</p>
 <p>to make this without error try Switch your MySQL mode to not use STRICT.</p>
 
@@ -161,6 +162,26 @@ mysql&gt; SET @@global.sql_mode= ‘’;<br>
               <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
               <div class="border-b border-gray-400">
                 
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
 
   
     
